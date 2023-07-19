@@ -4,6 +4,7 @@
 
 - ciedere l'età del passeggero
 - chiedere numero di km da percorrere
+- considerando che 1km =0.21 euro
 - definire l'età del passeggiero
 - definire il numero di km da percorrere
 - definire il prezzo del biglietto
