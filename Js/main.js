@@ -1,21 +1,24 @@
 //# inserimento input iniziali
 const userage = parseInt(prompt("inserire l'età"));
-const userkm = parseInt(prompt(" inserire quanti km si vuole percorrere"));
+const userkm = parseFloat(prompt(" inserire quanti km si vuole percorrere"));
 
 let eurokm = 0.21;
-const finalprice = `
-prezzo finale del biglietto
-`;
+const tiketprice = userkm * eurokm;
+let userdiscount = 0;
 
-console.log("prezzo finale dei km percorsi" + eurokm * userkm);
-
-let sconto20 = (eurokm / userkm) * 20;
-let sconto40 = (eurokm / userkm) * 20;
-
-if (userage >= 18) {
-	console.log("se sono maggiorenne verra applicato uno sconto del 40%");
-} else {
-	console.log("se sono minorenne verra applicato uno sconto del 20%");
+if (userage < 18) {
+	userdiscount = tiketprice * 0.2;
+	console.log(userdiscount);
+} else if (userage > 65) {
+	userdiscount = tiketprice * 0.4;
+	console.log(userdiscount);
 }
 
-document.getElementById("example").innerHTML = finalprice;
+const ticketfinalprice = tiketprice - userdiscount;
+
+const finalmessage = `
+il prezzo finale del tuo biglietto è €
+
+${ticketfinalprice}`;
+
+document.getElementById("example").innerHTML = finalmessage;
